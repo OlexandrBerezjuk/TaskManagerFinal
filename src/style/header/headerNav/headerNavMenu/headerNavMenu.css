@@ -1,0 +1,162 @@
+.headerNavMenu {                 
+    width: 50%;
+    height: 8vh;
+    position:relative;                   
+    z-index:2;
+    align-self: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+    .headerNavMenu {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 540px) {
+    .headerNavMenu {
+        width: 95%;
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+
+
+.headerNavMenu__links {         
+    color: white;
+    height: 8vh;                     
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.headerNavMenu ul {                 
+    list-style-type:none;
+}
+
+.headerNavMenu__linksOne,
+.headerNavMenu__linksTwo,
+.headerNavMenu__linksThree,
+.headerNavMenu__linksFour
+{                                   
+    width: 25%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.headerNavMenu__linksFour {
+    width: 23.5%;
+}
+
+@media screen and (max-width: 992px) {
+    .headerNavMenu__linksOne {
+        width: 90px;
+    }
+}
+
+
+
+
+
+.headerNavMenu ul li>a {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color:#fff;
+    text-transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerNavMenu ul li a:hover {
+    background-color:#007ee9;
+}
+
+@media screen and (max-width: 400px) {
+    .headerNavMenu ul li>a {
+        font-size: 11px;
+    }
+}
+
+
+
+.headerNavMenu ul div {
+    width: 0.5%;
+    height: 8vh;
+    background-color: lightslategrey;
+} 
+
+
+/* SUBMENU */
+
+.headerNavMenu ul li:hover > ul {
+    height: auto;
+    top: 8vh;
+    overflow: visible;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    z-index: 1000;
+}
+
+.headerNavMenu ul li:hover.headerNavMenu__linksThree > ul,
+.headerNavMenu ul li:hover.headerNavMenu__linksFour > ul
+{
+    top: 8vh;
+    right: 0;
+    left: auto;
+}
+
+
+
+.headerNavMenu ul li > ul { 
+    position: absolute;
+    background-color: #007ee9;
+    left: 0px;
+    width: 140%;
+    height: 0;
+    overflow: hidden;
+    z-index: 5000;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+}
+
+.headerNavMenu ul li > ul li {
+    width: 100%;
+    display:block;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+}
+
+.headerNavMenu ul li > ul li a {
+    width: 100%;
+    display: inline-block;
+    padding: 3%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.headerNavMenu ul li > ul li a:hover {
+    background-color:#789dcf;
+    cursor: pointer;
+}
+
+.headerNavMenu ul li.headerNavMenu__linksThree > ul li a,
+.headerNavMenu ul li.headerNavMenu__linksFour > ul li a
+{
+    text-align: right;
+}
+ 
+
+  

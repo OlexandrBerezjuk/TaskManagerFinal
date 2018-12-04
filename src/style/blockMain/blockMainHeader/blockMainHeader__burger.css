@@ -1,0 +1,14 @@
+.blockMainHeader div:first-child {
+    width: 30px;
+    height: 30px;
+    min-height: 30px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    font-size: 35px;
+    padding: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,104 @@
+.modalInfoTask {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-around;
+    display: none;
+}
+
+
+.modalInfoTask p {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    width: 20%;
+    text-align: left;
+    margin: 3px 0px;
+}
+
+
+#modalInfoTaskEmployer,
+#modalInfoTaskDescription,
+#modalInfoTaskAssD,
+#modalInfoTaskDeadline
+{   
+    font-weight: normal;
+    width: 75%;
+    text-align: left;   
+}
+
+
+#modalInfoTaskProjectName
+{
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.modalInfoTaskCancelTask {
+    background-color: red;
+    color: white;
+    padding: 10px 8px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#modalInfoTaskEstimated {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    margin: 15px 0px;
+    color: green;
+}
+
+@media screen and (max-width: 1200px) {
+    #modalInfoTaskEmployer,
+    #modalInfoTaskDescription,
+    #modalInfoTaskAssD,
+    #modalInfoTaskDeadline
+    {
+        margin-left: 12px;
+        padding-left: 5px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #modalInfoTaskEmployer,
+    #modalInfoTaskDescription,
+    #modalInfoTaskAssD,
+    #modalInfoTaskDeadline
+    {
+        margin-left: 12px;
+        padding-left: 13px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #modalInfoTaskEmployer,
+    #modalInfoTaskDescription,
+    #modalInfoTaskAssD,
+    #modalInfoTaskDeadline
+    {
+        margin-left: 12px;
+        padding-left: 13px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #modalInfoTaskEmployer,
+    #modalInfoTaskDescription,
+    #modalInfoTaskAssD,
+    #modalInfoTaskDeadline
+    {
+        padding-left: 28px;
+    }
+}

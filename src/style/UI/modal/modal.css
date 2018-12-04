@@ -1,0 +1,375 @@
+.modal {
+    position: fixed;
+    background-color: #524f50;
+    width: 70%;
+    height: 400px;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 15%;
+    top: 30%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    z-index: 500;
+    overflow: scroll;
+    transform: translateY(-100vh);
+    opacity: 0;
+    overflow-x: hidden;
+}
+
+.modalShow {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal input,
+.modal select,
+.modal textarea
+{
+    background-color: #ed8211;
+    color: black;
+}
+
+.modal textarea {
+    background-color: #ed8211;
+    width: 75%;
+    border: 1px solid black;
+    padding: 5px 5px;
+    display: block;
+    text-indent: 10px;
+}
+
+
+/* //////////////////////////////////////////////////////// */
+
+.createTask {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.createTaskHeader {
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+    color: black;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.createTaskBlock {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    overflow: hidden;
+    transition: height 1s;
+}
+
+
+
+.createTaskBlockData {
+    width: 75%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    transition: height 0.5s;
+    margin-top: 23px;
+}
+
+.createTaskBlockList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.5s;
+    box-sizing: content-box;
+    margin-top: 23px;
+}
+
+
+.createTaskBlockConfirm {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: height 0.5s;
+}
+
+.createTaskBlockConfirmCreate {
+    width: 20%;
+    height: 30px;
+    border-radius: 42px 42px;
+    background-color: blue;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+.createTaskBlockConfirmCreateDeactivated {
+    color: grey;
+    opacity: 0.5;
+}
+
+button.createTaskBlockConfirmCancel {
+    width: 20%;
+    height: 30px;
+    margin: 0;
+    border: none;
+    border-radius: 42px 42px;
+    padding: 0;
+}
+
+/* ////////////////////////////////////////////////////////// */
+
+
+.inputDate {
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    width: 75%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+#projectNameID,
+#projectEndDatepicker,
+#taskName,
+#employer,
+#subTaskDatepickerStartDate,
+#subTaskDatepickerEndDate,
+#subTaskEndTimePicker
+{
+    width: 75%;
+    border: 1px solid black;
+    padding: 5px 5px;
+    display: block;
+    text-indent: 10px;
+    color: red;
+}
+
+#projectNameID,
+#projectEndDatepicker
+{
+    width: 20%;
+}
+
+input {
+	text-indent: 10px;
+	color: red;
+}
+
+#projectNameID:valid,
+#projectEndDatepicker:valid,
+#taskName:valid,
+#employer:valid,
+#subTaskDatepickerStartDate:valid,
+#subTaskDatepickerEndDate:valid,
+#subTaskEndTimePicker:valid
+{
+	color: black;
+}
+
+
+.createTaskBlockLabel {
+    width: 20%;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createTaskBlockHide {
+    height: 0px;
+    transition: height 1s;
+}
+
+.createTaskBlockHide * {
+    height: 0px;
+    overflow: hidden;
+}
+  
+#projectEndDatepicker:focus,
+#subTaskDatepickerStartDate:focus,
+#subTaskDatepickerEndDate:focus,
+#Skills:focus
+{
+    outline: none;
+}
+
+  /* //////////////////////////TABS///////////////////////////////// */
+
+input[type=radio] {
+    display: none;
+}
+
+label[for="singleTask"],
+label[for="project"]
+{    
+    position: relative;
+    width: 116px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+}
+
+label[for="singleTask"] div,
+label[for="project"] div
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    width: 100%;
+    height: 5px;
+    display: none;
+}
+
+
+
+input[id="project"]:checked ~ div label[for="project"] div {
+    display: block;
+    background-color: yellow;
+}
+
+input[id="singleTask"]:checked ~ div label[for="singleTask"] div {
+    display: block;
+    background-color: yellow;
+}
+
+  /* //////////////////////////BUTTONS///////////////////////////////// */
+
+#closeModal {
+    margin-right: 5%;
+    margin-left: 95%;
+    cursor: pointer;
+}
+
+/* Кнопка */
+.createTaskBlockCreateProjectBtnAddMoreTask {
+    display: none;
+}
+
+/* Кнопка */
+.createTaskBlockCreateProjectBtn {
+    display: none;
+}
+.createTaskBlockCreateProjectBtnAddMoreTask > button,
+.createTaskBlockCreateProjectBtn > button
+{
+    width: 100%;
+    height: 30px;
+    border-radius: 42px 42px;
+    background-color: blue;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+
+/* ********************************************* */
+          /* Вкладка singleTask */
+/* ********************************************* */
+
+
+input:checked#singleTask ~ .createTask>.createTaskBlockLabel,
+input:checked#singleTask ~ .createTask>#projectNameID,
+input:checked#singleTask ~ .createTask>#projectEndDatepicker,
+input:checked#singleTask ~ .createTask>label,
+input:checked#singleTask ~ .createTask>strong
+{
+    display: none;
+}
+
+input:checked#singleTask ~ .createTask>.createTaskBlock {
+    height: 250px;
+    overflow: visible;
+}
+/* ********************************************* */
+
+
+
+/* ********************************************* */
+            /* Вкладка PROJECT */
+/* ********************************************* */
+input:checked#project ~ .createTask>.createTaskBlock {
+    height: 0;
+    overflow: hidden;
+}
+
+/* Если в овкладке PROJECT не задать правильное время и дату то поля    не отобразятся */
+
+#projectEndDatepicker,
+#projectNameID+.createTaskBlockLabel
+{
+    display: none;
+}
+
+
+input:valid#projectNameID ~ #projectEndDatepicker,
+input:valid#projectNameID ~ .createTaskBlockLabel
+ {
+    display: flex;
+}
+
+input:valid#projectEndDatepicker ~ .createTaskBlock.createTaskBlockSuper {
+    height: 250px;
+    overflow: visible;
+}
+/* ********************************************* */
+
+
+@media screen and (max-width: 768px) {
+    label[for="project"] {
+        width: 45%;
+    }
+    label[for="singleTask"] {
+        width: 50%;
+    }
+    .createTaskBlockLabel {
+        width: 45%;
+        font-size: 12px;
+    }
+    #projectNameID,
+    #projectEndDatepicker
+    {
+        width: 45%;
+    }
+    .createTaskBlockConfirmCreate {
+        width: 45%;
+    }
+    button.createTaskBlockConfirmCancel {
+        width: 45%;
+    }
+    #taskName,
+    #employer,
+    #subTaskDatepickerEndDate,
+    #subTaskEndTimePicker,
+    .modal textarea
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    label[for="project"] {
+        font-size: 12px;
+    }
+    label[for="singleTask"] {
+        font-size: 12px;
+    }
+}

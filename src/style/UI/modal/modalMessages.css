@@ -1,0 +1,96 @@
+.modalMessages {
+    position: fixed;
+    background-color: white;
+    width: 70%;
+    height: 50%;
+    box-shadow: 1px 1px 1px black;
+    left: 15%;
+    top: 30%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    z-index: 500;
+    overflow: hidden;
+    transform: translateY(-100vh);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+}
+
+.modalMessagesShow {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.modalMessagesWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+
+.modalMessagesHeader {
+    width: 100%;
+    height: 31px;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3%;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    box-sizing: border-box;
+}
+
+.modalMessagesHeader .fa-times {
+    cursor: pointer;
+}
+
+.modalMessagesSingle {
+    height: auto;
+    min-height: 90px;
+    margin: 10px 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: #00aae8;
+    border-radius: 20px;
+    color: white;
+}
+
+/* CONTENT */
+.modalMessagesSingleName {
+    width: 45%;
+    height: 30px;
+    display: inline-block;
+    font-weight: bold;
+}
+.modalMessagesSingleTime {
+    width: 45%;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+.modalMessagesSingleTitle {
+    width: 90%;
+    height: 30px;
+    display: inline-flex;
+}
+.modalMessagesSingleMsg {
+    width: 90%;
+    height: auto;
+    display: inline-block;
+}

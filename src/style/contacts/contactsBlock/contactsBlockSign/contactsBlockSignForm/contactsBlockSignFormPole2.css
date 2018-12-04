@@ -1,0 +1,13 @@
+.contactsBlockSignFormPole2 {
+	width: 100%;
+	height: 51px;
+	background-color: #f1f4f7;
+	box-sizing: border-box;
+	border: none;
+}
+
+@media screen and (max-width: 992px) {
+	.contactsBlockSignFormPole2 {
+		height: 40px;
+		margin-top: 15px;	
+}}

@@ -1,0 +1,56 @@
+.modalInfo {
+    position: absolute;
+    background-color: white;
+    width: 40%;
+    height: 0px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    color: black;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    z-index: 500;
+    overflow: hidden;
+    transform: translateY(-5000px);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.modalInfoShow {
+    height: auto;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modalInfoTaskCloser {
+    align-self: flex-end;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 3%;
+}
+@media screen and (max-width: 992px) {
+    .modalInfo  {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .modalInfo  {
+        width: 65%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .modalInfo  {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .modalInfo  {
+        width: 88%;
+        padding: 5px;
+    }
+}

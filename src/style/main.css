@@ -1,0 +1,71 @@
+@import url('./UI/modal/modal.css');
+@import url('./UI/modal/modalChooseUser.css');
+@import url('./UI/modal/modalInfo/modalInfo.css');
+@import url('./UI/modal/modalInfo/modalInfoTask.css');
+@import url('./UI/modal/modalInfo/modalInfoUser.css');
+@import url('./UI/modal/modalMessages.css');
+@import url('./UI/modal/backdrop.css');
+@import url('./UI/sideBar.css');
+@import url('./UI/sideMenu.css');
+@import url('./UI/paginaton.css');
+
+@import url('./header/header.css');
+@import url('./header/headerMenuScrollable.css');
+@import url('./header/headerNav/headerNav.css');
+@import url('./header/headerNav/headerNavLogo/headerNavLogo.css');
+@import url('./header/headerNav/headerNavMenu/headerNavMenu.css');
+@import url('./header/headerStart/headerStart.css');
+
+@import url('./blockMain/blockMain.css');
+@import url('./blockMain/blockMainHeader/blockMainHeader.css');
+@import url('./blockMain/blockMainHeader/blockMainHeader__burger.css');
+@import url('./blockMain/blockMainHeader/blockMainHeader__taskPeriod.css');
+@import url('./blockMain/blockMainHeader/blockMainHeaderLoginedUser.css');
+@import url('./blockMain/viewTaskBlockWrapper/viewTasksBlockwrapper.css');
+@import url('./blockMain/viewTaskBlockWrapper/task/task.css');
+@import url('./blockMain/viewTaskBlockWrapper/task/performers/performers.css');
+@import url('./blockMain/viewTaskBlockWrapper/task/taskInfo/taskInfo.css');
+@import url('./blockMain/viewTaskBlockWrapper/task/status/blockMainStatusWrapper.css');
+@import url('./blockMain/viewTaskBlockWrapper/task/progress/progress.css');
+@import url('./blockMain/viewTaskBlockWrapper/task/progressInfo/progressInfo.css');
+@import url('./blockMain/blockMainMenuAnimated/blockMainMenuAnimated.css');
+@import url('./blockMain/blockMainFooter/blockMainFooter.css');
+
+@import url('./slider/sliderBlock.css');
+
+@import url('contacts/contacts.css'); 
+@import url('contacts/contactsBlock/contactsBlock.css');
+@import url('contacts/contactsBlock/contactsBlockInformation/contactsBlockInformation.css');
+@import url('contacts/contactsBlock/contactsBlockInformation/contactsBlockInformationAddress/contactsBlockInformationAddress.css');
+@import url('contacts/contactsBlock/contactsBlockInformation/contactsBlockInformationAddress/contactsBlockInformationTitle.css');
+@import url('contacts/contactsBlock/contactsBlockInformation/contactsBlockInformationAddress/contactsBlockInformationText.css');
+@import url('contacts/contactsBlock/contactsBlockSign/contactsBlockSign.css');
+@import url('contacts/contactsBlock/contactsBlockSign/contactsBlockSignForm/contactsBlockSignForm.css');
+@import url('contacts/contactsBlock/contactsBlockSign/contactsBlockSignForm/contactsBlockSignFormPole1.css');
+@import url('contacts/contactsBlock/contactsBlockSign/contactsBlockSignForm/contactsBlockSignFormPole2.css');
+@import url('contacts/contactsBlock/contactsBlockSign/contactsBlockSignForm/contactsBlockSignFormPole3.css');
+@import url('contacts/contactsBlock/contactsBlockSign/contactsBlockSignForm/contactsBlockSignFormBtn.css');
+
+@import url('./footer/footer.css');
+
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #326795;
+    /* font-family: 'Varela', sans-serif; */
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.blockID {
+    display: none;
+}

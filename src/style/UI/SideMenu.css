@@ -1,0 +1,83 @@
+p, ul, li, div, nav {
+    padding:0;
+    margin:0;
+}
+
+#menu {
+    position:relative;
+    height: 50%;                   
+    z-index:2;
+    width: 100%;                     
+}
+.parent-menu {
+    background-color: #333333;          
+    float:left;
+    height: 80%;                    
+    width: 100%;                 
+}
+#menu ul {
+    list-style-type:none;
+}
+
+#menu ul li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu ul li a {
+    width: 100%;
+    padding: 10px 15px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+#menu ul li a:hover {
+    background-color:#326795;
+} 
+
+/* SUBMENU */
+
+
+#menu ul li:hover > ul {
+    left: 100%;
+    -webkit-transition: left 200ms ease-in;
+    -moz-transition: left 200ms ease-in;
+    -ms-transition: left 200ms ease-in;
+    transition: left 200ms ease-in;
+    z-index: -1;
+}
+
+#menu ul li > ul { 
+    width: 100%;
+    position: absolute;
+    background-color: #333;
+    top: 0;
+    left: 0px;
+    z-index: -3;
+    height: 150px;
+    -webkit-transition: left 200ms ease-in;
+    -moz-transition: left 200ms ease-in;
+    -ms-transition: left 200ms ease-in;
+    transition: left 200ms ease-in;
+}
+
+#menu ul li > ul li a:hover {
+    background-color: #326795;
+} 
+
+#btn1 {
+    width: 80%;
+    height: 70px;
+    background-color: #31c654;
+}
+
+
+@media screen and (max-width: 576px) {
+    #menu ul li > ul {
+      min-width: 50px;
+    }
+}
+

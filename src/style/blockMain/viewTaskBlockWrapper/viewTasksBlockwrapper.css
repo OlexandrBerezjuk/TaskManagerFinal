@@ -1,0 +1,30 @@
+.viewTasksBlockwrapper {
+    height: 72%;
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+  
+  
+  
+.viewTasksBlockwrapper::-webkit-scrollbar-track {
+    padding: 2px 0;
+}
+  
+.viewTasksBlockwrapper::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.viewTasksBlockwrapper::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #404040;
+  
+}

@@ -1,0 +1,17 @@
+.blockMainFooter {
+    width: 100%;
+    height: 13%;
+    background-color: #183147;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+    .blockMainFooter {
+        height: 10%;
+        min-width: 184px;
+    }
+}

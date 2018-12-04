@@ -1,0 +1,133 @@
+@keyframes blocktitleAppear {                      
+	from {
+		opacity: 0;
+		font-size: 0px;
+	}
+
+	to {
+		opacity: 1;
+		font-size: 25px;
+	}
+}
+
+@keyframes addressAppear {                      
+	from {
+		opacity: 0;
+		transform: translateY(500px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+input {
+	text-indent: 17px;
+	color: red;
+}
+
+input:valid {
+	color: black;
+}
+
+textarea {
+	text-indent: 17px;
+	padding-top: 5px;
+}
+
+.contacts {
+	margin: 0;
+	height: 980px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    justify-content: space-around;
+	padding-top: 30px;
+	background-color: #183147;
+}
+
+.contactsFooterLine {
+	width: 100%;
+	height: 1px;
+	background-color: #4e637c;
+	/* align-self: flex-end; */
+}
+
+@media screen and (max-width: 1200px) {
+	.contacts {
+		width: 100%;
+		height: auto;
+		display: flex;	
+	}
+	.contacts > * {
+		margin-top: 10px;
+	}
+}
+
+.contactsHead {
+	width: 255px;
+	height: 64px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 400;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	justify-content: center;
+	opacity:1;
+}
+
+.contactsHead>p {
+	text-align: center;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+@media screen and (max-width: 1200px) {
+	
+		.contactsHead>p {
+ 			margin-top: -32px;
+ 		}
+ 	
+ }
+
+ @media screen and (max-width: 768px) {
+ 	.contactsHead {
+ 		font-size: 4vw;
+ 	}
+	.contactsHead>p {
+ 		margin-top: -30px;
+ 	}
+
+ }
+
+ @media screen and (max-width: 576px) {
+ 	.contactsHead {
+ 		font-size: 6vw;
+ 		width: 80%;
+ 	}
+	.contactsHead>p {
+		margin-top: -30px;
+	}
+
+ }
+
+
+#contactsMap {
+	width: 90%;
+	height: 301px;
+	background-color: #808080;
+	opacity: 0.8;
+}
+#contactsMap:hover {
+	opacity: 1;
+}
+
+ @media screen and (max-width: 768px) {
+ 	.contactsMap {
+ 		width: 100%;
+ 		height: 200px;	
+ 	}
+}

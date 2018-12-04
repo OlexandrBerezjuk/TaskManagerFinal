@@ -1,0 +1,14 @@
+.contactsBlockSignForm {
+	width: auto;
+	height: 425px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+}
+
+@media screen and (max-width: 992px) {
+	.contactsBlockSignForm {
+		height: auto;	
+	}
+}

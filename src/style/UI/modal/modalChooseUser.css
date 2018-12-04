@@ -1,0 +1,86 @@
+.modalChooseUser {
+    position: fixed;
+    background-color: #524f50;
+    width: 30%;
+    height: 40vh;
+    padding: 16px;
+    left: 35%;
+    top: 30%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    z-index: 500;
+    color: black;
+    transform: translateY(-100vh);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.modalShowChooseUser {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#closeModalChooseUser {
+    align-self: flex-end;
+}
+
+.modalChooseUser select {
+    width: 80%;
+    text-align: center;
+    background-color: #ed8211;
+}
+
+.modalChooseUser div:first-child {
+    align-self: flex-end;
+}
+
+.modalChooseUser div:first-child .fa-times {
+    cursor: pointer;
+}
+
+#ChosenOK {
+    width: 50%;
+    height: 30px;
+    margin: 0 auto;
+    border-radius: 42px 42px;
+    background-color: blue;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+.ChosenOKDisabled {
+    color: grey;
+    opacity: 0.5;
+}
+
+
+.modalChooseUser select::-webkit-scrollbar-track {
+    padding: 2px 0;
+  }
+  
+.modalChooseUser select::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+.modalChooseUser select::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #efefef;
+}
+
+@media screen and (max-width: 768px) {
+    .modalChooseUser  {
+        width: 50%;
+        left: 25%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .modalChooseUser  {
+        width: 80%;
+        left: 10%;
+    }
+}

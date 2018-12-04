@@ -1,0 +1,80 @@
+.headerMenuScrollable {
+    width: 100%;
+    height: 11vh;
+    background-color: #000;
+    position: absolute;
+    top: -11vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-out;
+    z-index: 5;
+    color: white;
+}
+
+
+.headerMenuScrollableFixed {
+    position: fixed;
+    top: 0;
+    opacity: 1;
+}
+
+.headerMenuScrollable div:first-child {
+    height: 90%;
+    width: 138px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerMenuScrollable div:first-child img {
+    width: 40%;
+    height: auto;
+}
+
+.headerMenuScrollable div:last-child {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* @media screen and (max-width: 1200px) {
+    .headerMenuScrollable div:first-child {
+        width: 50px;
+    }
+    .headerMenuScrollable div:first-child img {
+        width: 60%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .headerMenuScrollable div:first-child {
+        width: 50px;
+    }
+    .headerMenuScrollable div:first-child img {
+        width: 60%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .headerMenuScrollable div:first-child {
+        width: 30%;
+    }
+    .headerMenuScrollable div:first-child img {
+        width: 60%;
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .headerMenuScrollable div:first-child {
+        width: 40%;
+    }
+    .headerMenuScrollable div:first-child img {
+        width: 60%;
+        height: auto;
+    }
+} */

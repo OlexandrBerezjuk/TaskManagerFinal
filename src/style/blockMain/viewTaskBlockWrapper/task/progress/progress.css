@@ -1,0 +1,38 @@
+.progress {
+    width: 10%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.progressLevel {
+    width: 45%;
+    height: 90%;
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 7px;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+    .progress {
+        width: 12%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .progress {
+        width: 15%;
+        min-width: 21px;
+    }
+    .progressLevel {
+        width: 100%;
+        min-width: 21px;
+    }
+}

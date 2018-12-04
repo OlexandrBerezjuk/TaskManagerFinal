@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRM Task Manager</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Varela" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./lib/timepicker.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" />
+</head>
+
+
+
+<body>
+    <div class="headerMenuScrollable">
+        <div>
+            <img src="./img/LOGO.png" alt="logo">
+        </div>
+        <div>
+            <i class="fas fa-bars" id="menuAnimateBtnOpen"></i>
+        </div>
+    </div>
+    <div class="modal">
+        <div id="closeModal">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <input type="radio" name="taskSwitcher" value="project" id="project" checked>
+        <input type="radio" name="taskSwitcher" value="singleTask" id="singleTask">
+        <div>
+            <label for="project">
+                <div></div>
+                <br>PROJECT
+            </label>
+            <label for="singleTask">
+                <div></div>
+                <br>SINGLE TASK
+            </label>
+        </div>
+
+        <br>
+
+
+        <div class="createTask">
+            <div class="createTaskBlockLabel">
+                <strong>PROJECT NAME: </strong>
+            </div>
+            <input type="text" id="projectNameID" pattern='[A-ZА-Я][a-zа-я\.\-\s]{5,25}' required />
+            <div class="createTaskBlockLabel">
+                <strong>PROJECT DEADLINE: </strong>
+            </div>
+            <input type="text" id="projectEndDatepicker" pattern='[0-2]{2}\/[0-9]{2}\/[0-9]{4}' required />
+            <label for="datepicker">
+                <!-- <i class="far fa-calendar-alt"></i> -->
+            </label>
+
+
+
+            <!-- <div class="createTaskHeader"></div> -->
+
+            <div class="createTaskBlock createTaskBlockSuper">
+
+                <div class="createTaskBlockData">
+
+
+
+                    <input type="text" id="taskName" name="TaskName" placeholder="Task name" pattern='([A-Z][A-Za-z\s\-\d]{4,20}|[А-Я][А-Яа-я\s\-\d]{4,20})'
+                        title="Username should Start from capital and further contain only lowercase letters. e.g. John, Андрей"
+                        required />
+                    <!--  -->
+
+
+                    <input type="text" id="employer" name="Employer" placeholder="Employer" pattern='([A-Z][A-Za-z\s\.]{4,30}|[А-Я][А-Яа-я\s\.]{4,30})'
+                        title="Username should Start from capital and further contain only lowercase letters. e.g. Lewis, Кириченко, Softikomp Inc."
+                        required />
+                    <!--  -->
+
+
+                    <!-- <input type="text" id="subTaskDatepickerStartDate" pattern='[0-2]{2}\/[0-9]{2}\/[0-9]{4}' required/> -->
+                    <!-- <label for="subTaskDatepickerStartDate" >
+                        <i class="far fa-calendar-alt"></i>
+                    </label> -->
+
+
+                    <input type="text" id="subTaskDatepickerEndDate" name="EndDate" placeholder="End date" pattern='[0-2]{2}/[0-9]{2}/[0-9]{4}'
+                        title="Date should have format like 11/25/2018" required />
+
+
+                    <input type="text" id="subTaskEndTimePicker" name="EndTime" placeholder="Time" name="timepicker"
+                        data-toggle="timepicker" pattern='[0-9]{2}:[0-9]{2}' title="Time should be in format for example 11:33 (24h)"
+                        required>
+
+
+
+                    <textarea rows="4" cols="50" id="subTaskDescription" placeholder="Description" pattern="[A-Z][A-Za-z\s\.]{20,50}|[А-Я][А-Яа-я\s\.]{20,50}"
+                        title="Descrition should contain at least 20 letters and not more 50" required></textarea>
+                    <!-- <label for="subTaskDatepickerEndDate" >
+                        <i class="far fa-calendar-alt"></i>
+                    </label> -->
+
+
+                </div>
+                <div class="createTaskBlockList"></div>
+                <div class="createTaskBlockConfirm">
+                    <button class="createTaskBlockConfirmCreate createTaskBlockConfirmCreateDeactivated" disabled>CREATE</button>
+                    <button class="createTaskBlockConfirmCancel modalInfoTaskCancelTask">CLEAR</button>
+                </div>
+            </div>
+            <div class="createTaskBlockCreateProjectBtnAddMoreTask">
+                <button class="createTaskBlockCreateProjectBtnAddMoreTaskBtn">+ Add more task</button>
+            </div>
+            <div class="createTaskBlockCreateProjectBtn">
+                <button class="createProjectBtn">CREATE PROJECT</button>
+            </div>
+        </div>
+    </div>
+    <div class="modalChooseUser">
+        <div>
+            <i class="fas fa-times" id="closeModalChooseUser"></i>
+        </div>
+       
+        <button id="ChosenOK" class="ChosenOKDisabled">CHOOSE</button>
+    </div>
+    <div class="backdrop"></div>
+    <div class="modalMessages">
+        <div class="modalMessagesHeader">
+            <p>Messages</p>
+            <p><i class="fas fa-times" id="modalMessagesClose"></i></p>
+        </div>
+
+        <div class="modalMessagesWrapper"></div>
+
+    </div>
+    <div class="menu" id="menuAnimate">
+        <div class="container-menu">
+            <div class="hrest" id="menuAnimateBtnClose"> x </div>
+            <div class="block-menu">
+                    <div class="img2">
+                        <img src="./img/LOGO.png" alt="Logo">
+                    </div> 
+                   
+                <!-- <h1>Menu</h1> -->
+            </div>
+            <div class="block2-menu">
+                <ul>
+                    <li id="home">Home</li>
+
+                    <li id="Manager">Manager</li>
+
+                    <li id="Gallery">Gallery</li>
+
+                    <li id="contact">contact</li>
+
+                </ul>
+            </div>
+            <div class="find-bar">
+                <form>
+                    <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search" autofocus> 
+                    <div class="button_for_turn_back" onclick="javascript: FindOnPage('text-to-find',false); return false;"><i class='fas fa-times'></i></div>
+                    <input class="button_for_search" type="button" onclick="javascript: FindOnPage('text-to-find',true); return false;" value="&#x2315" title="Start search">
+                </form>
+            </div>
+            
+            <div class="block3-menu">
+                <div class="shape"><i class="fab fa-facebook-f"></i></div>
+                <div class="shape"><i class="fab fa-twitter"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="modalInfo">
+        <div class="modalInfoTaskCloser"><i class='fas fa-times'></i></div>
+
+        <div class="modalInfoTask">
+            <p id="modalInfoTaskProjectName">Project:</p>
+            <p>Employer:</p>
+            <p id="modalInfoTaskEmployer"></p>
+            <p>Description:</p>
+            <p id="modalInfoTaskDescription"></p>
+            <p>Assigned:</p>
+            <p id="modalInfoTaskAssD"></p>
+            <p>Deadline:</p>
+            <p id="modalInfoTaskDeadline"></p>
+            <p id="modalInfoTaskEstimated">Estimated:</p>
+
+            <div class="modalInfoTaskCancelTask">CANCEL</div>
+        </div>
+
+        <div class="modalInfoUser">
+            <p id="modalInfoUserName"></p>
+            <p>Position:</p>
+            <p id="modalInfoUserPosition"></p>
+            <p>Age:</p>
+            <p id="modalInfoUserAge"></p>
+            <p>Contact:</p>
+            <p id="modalInfoUserContact"></p>
+            <p>Tasks:</p>
+            <p id="modalInfoUserTasks"></p>
+            <p id="modalInfoUserTaskID"></p>
+            <textarea name="" id="" cols="30" rows="5" class="modalInfoUserTextarea"></textarea>
+            <div class="modalInfoUserMsgSend">SEND</div>
+            <div class="modalInfoUserMsg">WRITE MESSAGE</div>
+
+            
+        </div>
+
+    </div>
+
+
+
+
+    <main id="mainField">
+        <header class="header" id="headerBlock">
+
+            <div class="headerNav">
+                <div class="headerNavLogo">
+                    <img src="./img/LOGO.png" alt="Business people">
+                    <!-- <i class="fab fa-google"></i> -->
+                </div>
+
+                <nav class="headerNavMenu">
+                    <!-- #menu-->
+                    <ul class="headerNavMenu__links">
+                        <!-- .parent-menu-->
+                        <li class="headerNavMenu__linksOne">
+                            <!-- #menu ul li-->
+                            <a href="#">ABOUT</a> <!-- #menu ul li a-->
+                            <ul>
+                                <!-- #menu ul li > ul -->
+                                <li><a href="#">Control</a></li>
+                                <li><a href="#">Up-to-date report</a></li>
+                                <li><a href="#">Preciseness</a></li>
+                                <li><a href="#">Informativeness</a></li>
+                                <li><a href="#">Client support</a></li>
+                            </ul>
+                        </li>
+
+                        <div></div>
+                        <li class="headerNavMenu__linksTwo">
+                            <a href="#">COMPANY</a>
+                            <ul>
+                                <!-- #menu ul li > ul -->
+                                <li><a href="#">Achievements</a></li>
+                                <li><a href="#">Management</a></li>
+                                <li><a href="#">Our clients</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </li>
+                        <div></div>
+                        <li class="headerNavMenu__linksThree">
+                            <a href="#">PRODUCTS</a>
+                            <ul>
+                                <!-- #menu ul li > ul -->
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Consultaion</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </li>
+                        <div></div>
+                        <li class="headerNavMenu__linksFour">
+                            <a href="#">HELP</a>
+                            <ul>
+                                <!-- #menu ul li > ul -->
+                                <li> <a href="#">Guide</a> </li>
+                                <li> <a href="#">Contact operator</a> </li>
+                                <li> <a href="#">Write your question</a> </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="headerStart">
+                <p class="headerStart__advertisement"><strong>CONTROL YOUR BUSINESS FROM EVERYWHERE</strong></p>
+                <p class="headerStart__text"><strong>In the tumultuous business of cutting-in and attending to a whale,
+                        there is much running backwards and forwards among the crew.</strong></p>
+                <button class="headerStart__button"><strong>START</strong></button>
+            </div>
+            <div class="headerLine"></div>
+        </header>
+
+        <section class="blockMain" id="blockMain">
+
+            <div class="blockMainHeader">
+                <div>
+                    <i class="fas fa-bars" id="blockMainSideMenuOpen"></i>
+                    <i class="fas fa-arrow-left" id="blockMainSideMenuClose"></i>
+                </div>
+
+                <div id="blockMainHeaderTaskPeriod">All tasks</div>
+                <div id="login">
+                    <a href=""><i class="fas fa-sign-in-alt"></i></a>
+                </div>
+                <div id="logout">
+                    <div class="blockMainLoginedUser"></div>
+                    <p></p>
+                    <div class="blockMainLoginedUserMessages">
+                        
+                        <i class="far fa-envelope"></i>
+                        <div id="blockMainHeaderLogout__MsgCounter">2</div>
+                    </div>
+                    <i class="fas fa-sign-out-alt" id="logoutSign"></i>
+
+                </div>
+            </div>
+
+            <!-- <button class="exit">Sign out</button> -->
+
+            <div class="blockMainHeaderBackgroundText">PLEASE SIGN IN</div>
+
+            <div class="viewTasksBlockwrapper">
+            </div>
+
+            <div class="blockMainFooter">
+            </div>
+
+            <div class="blockMainMenuAnimated" id="blockMainMenuAnim">
+                <nav id="menu">
+                    <ul class="parent-menu">
+
+                        <li>
+                            <a href="#">FILTER</a>
+                            <ul>
+                                <li>
+                                    <button class="blockMainMenuAnimatedFilterAll">Show all</button>
+                                </li>
+                                <li>
+                                    <button class="blockMainMenuAnimatedFilterDay">Sort by day</button>
+                                </li>
+                                <li>
+                                    <button class="blockMainMenuAnimatedFilterWeek">Sort by week</button>
+                                </li>
+                                <li>
+                                    <button class="blockMainMenuAnimatedFilterMonth">Sort by month</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">PIN</a>
+                        </li>
+                        <li>
+                            <a href="#">HIDE</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="headerStart__button" id="btn1"><strong>+ ADD TASK</strong></button>
+            </div>
+
+
+
+        </section>
+
+        <section class="sliderBlock" id="sliderBlock">
+
+            <div class="sliderBlockwrapper">
+
+                <input type="radio" name="sliderArrow" id="arrLeft">
+                <input type="radio" name="sliderArrow" id="arrRight">
+
+                <label for="arrLeft"> &lang; </label>
+
+                <div class="sliderBlockWrapperPicture" id="sliderBlockwrapperImg1">
+                </div>
+
+                <div class="sliderBlockWrapperPicture" id="sliderBlockwrapperImg2">
+                </div>
+
+                <div class="sliderBlockWrapperPicture" id="sliderBlockwrapperImg3">
+                </div>
+
+                <div class="sliderBlockWrapperPicture" id="sliderBlockwrapperImg4">
+                </div>
+
+                <div class="sliderBlockWrapperPicture" id="sliderBlockwrapperImg5">
+                </div>
+
+                <div class="sliderBlockWrapperPicture" id="sliderBlockwrapperImg6">
+                </div>
+
+                <div class="sliderBlockWrapperPicture" id="sliderBlockwrapperImg7">
+                </div>
+
+                <div class="sliderBlockWrapperPicture" id="sliderBlockwrapperImg8">
+                </div>
+
+                <div class="sliderBlockWrapperPicture" id="sliderBlockwrapperImg9">
+                </div>
+
+                <label for="arrRight"> &rang; </label>
+            </div>
+
+
+        </section>
+
+        <section class="contacts" id="contactsBlock">
+            <div class="contactsHead">
+                <strong>Get In Touch</strong>
+                </br>
+                <p>We are communicative and social</p>
+            </div>
+            <div id="contactsMap">
+
+                <script>
+                    function initMap() {
+                        var uluru = { lat: 50.428789, lng: 30.476004 };
+                        var map = new google.maps.Map(document.getElementById('contactsMap'), { zoom: 17, center: uluru });
+                        var marker = new google.maps.Marker({ position: uluru, map: map });
+                    }
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ-kbdVBqC5LuNC3BxBFM3gFkI2eB3_vY&callback=initMap"></script>
+            </div>
+            <div class="contactsBlock">
+                <div class="contactsBlockSign">
+                    <form>
+                        <div class="contactsBlockSignForm">
+                            <input type='text' class='contactsBlockSignFormPole1' placeholder='Your name' pattern='[A-ZА-Я][a-zа-я\.\-\s]{5,25}'
+                                title="Username should Start from capital and further contain only lowercase letters. e.g. Lewis, Кириченко">
+                            <input type='email' class='contactsBlockSignFormPole1' placeholder='Your mail'>
+                            <input type='text' class='contactsBlockSignFormPole2' placeholder='Subject' pattern='[A-Za-z\s\.]{10,50}|[А-Яа-я\s\.]{10,50}'
+                                title="Subject should contain at least 10 literals">
+                            <textarea type='text' class='contactsBlockSignFormPole3' placeholder='Type message here ... '
+                                pattern='[A-Za-z\s\.]{10,50}|[А-Яа-я\s\.]{10,50}' title="Descrition should contain at least 10 literals"></textarea>
+                            <button class="contactsBlockSignFormBtn">SEND</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="contactsBlockInformation">
+                    <div class="contactsBlockInformationAddress">
+                        <p class="contactsBlockInformationTitle"><strong>Our Address</strong></p>
+                        <p class="contactsBlockInformationText">Solomianska street 7<br>Kyiv, 03110<br>Ukraine</p>
+                    </div>
+                    <div class="contactsBlockInformationAddress">
+                        <p class="contactsBlockInformationTitle"><strong>Email</strong></p>
+                        <p class="contactsBlockInformationText">taskmanager@mail.com</p>
+                    </div>
+                    <div class="contactsBlockInformationAddress">
+                        <p class="contactsBlockInformationTitle"><strong>Phone</strong></p>
+                        <p class="contactsBlockInformationText">+3 8033-455-7990</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactsFooterLine"></div>
+        </section>
+
+        <footer class="footer">
+            <div class="content_Flex">
+                <p class="Copy">Copyright © 2018 DUT, All Rights Reserved</p>
+                <div class="icons">
+                    <div class="shape">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="shape">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+
+
+    <script src='./includes/data.js'></script>
+    <script src='./includes/task.js'></script>
+    <script src='./includes/load.js'></script>
+    <script src='./includes/navigation.js'></script>
+    <script src='./includes/sideMenu.js'></script>
+    <script src='./includes/pagination.js'></script>
+    <script src='./includes/search.js'></script>
+</body>
+
+</html>

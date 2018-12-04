@@ -1,0 +1,81 @@
+.paginatorItem,
+.paginatorItemFirst
+{
+    display: none;
+}
+
+
+.paginatorWrapper {
+    width: 32%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.paginatorWrapper label:first-child.pointerLabelFirst {
+    border-radius: 5px 0px 0px 5px;
+}
+.paginatorWrapper label:last-child.pointerLabelFirst {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.pointerLabel,
+.paginatorItemFirst,
+.pointerLabelFirst,
+.pointerLabelDotsLeft,
+.pointerLabelDotsRight
+{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid grey;
+    cursor: pointer;
+    padding-top: 5px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+}
+
+.paginatorItemFirst,
+.pointerLabelFirst,
+.pointerLabelDotsLeft,
+.pointerLabelDotsRight
+{
+    border: none;
+}
+
+.pointerLabelFirst {
+    width: 39px;
+    background-color: transparent;
+    border: 1px solid grey;
+}
+
+input:checked.paginatorItem+label {
+    background-color: blue;
+}
+
+@media screen and (max-width: 992px) {
+    .paginatorWrapper {
+        width: 42%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .paginatorWrapper {
+        width: 52%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .paginatorWrapper {
+        width: 62%;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .paginatorWrapper {
+        width: 88%;
+    }
+}

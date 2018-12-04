@@ -1,0 +1,12 @@
+#blockMainHeaderTaskPeriod {
+    width: 20%;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 576px) {
+    #blockMainHeaderTaskPeriod {
+        font-size: 17px;
+        width: 20%;
+        text-align: center;
+    }
+}

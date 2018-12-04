@@ -1,0 +1,71 @@
+.footer {   
+    width: 100%;
+    height: 168px;
+    background-color: #183147;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content_Flex {
+    width: 1150px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Copy {
+    color: #fbfbfb;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 400;
+}
+.icons {
+    width: 98px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+.shape {
+    border-radius: 50%;
+    width: 36px;
+    height: 35px;
+    background-color: #fbfbfb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.shape:hover {
+    margin-top: -5px;
+    opacity: 1;
+}
+
+.fa-facebook-f{
+    font-size: 20px;
+    color: #333333;
+} 
+.fa-twitter {
+    font-size: 20px;
+    color: #333333;
+}
+
+@media screen and (max-width: 1920px) {
+    .footer {   
+        width: 100%;
+    }
+    .content_Flex {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 465px) {
+    .content_Flex {
+        height: 80px;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+}

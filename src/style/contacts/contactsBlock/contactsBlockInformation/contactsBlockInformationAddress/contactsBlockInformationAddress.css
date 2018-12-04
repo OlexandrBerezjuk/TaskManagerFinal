@@ -1,0 +1,33 @@
+.contactsBlockInformationAddress {
+	width: 180px;
+	height: auto;
+	font-weight: 400;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	opacity: 1;
+}
+
+@media screen and (max-width: 992px) {
+	.contactsBlockInformationAddress {
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.contactsBlockInformationAddress {
+		margin-top: 25px;
+		margin-bottom: 15px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.contactsBlockInformationAddress {
+		/* margin-top: 20px; */
+		width: 33%;
+		min-width: 145px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		align-content: start;
+	}
+}

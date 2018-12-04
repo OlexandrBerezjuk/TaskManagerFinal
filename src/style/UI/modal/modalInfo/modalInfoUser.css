@@ -1,0 +1,90 @@
+.modalInfoUser {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-around;
+    display: none;
+}
+
+.modalInfoUser p {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    width: 20%;
+    text-align: left;
+    margin: 3px 0px;
+}
+
+
+#modalInfoUserAge,
+#modalInfoUserContact,
+#modalInfoUserTasks,
+#modalInfoUserPosition
+{   
+    font-weight: normal;
+    width: 75%;
+    text-align: left;   
+}
+
+#modalInfoUserName {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.modalInfoTaskMessage {
+    width: 100%;
+}
+
+.modalInfoUserTextarea {
+    width: 94%;
+    padding: 5px;
+    box-sizing: border-box;
+    display: none;
+    margin: 7px 0px;
+}
+
+
+.modalInfoUserMsg,
+.modalInfoUserMsgSend
+{
+    display: none;
+    background-color: blue;
+    color: white;
+    padding: 10px 8px;
+    margin: 0 auto; 
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.modalInfoUserMsg {
+    display: block;
+}
+.modalInfoUserMsgHide {
+    display: none;
+}
+
+.modalInfoUserTextareaSendHide {
+    display: block;
+}
+
+#modalInfoUserTaskID {
+    display: none;
+}
+
+
+@media screen and (max-width: 576px) {
+    #modalInfoUserAge,
+    #modalInfoUserContact,
+    #modalInfoUserTasks,
+    #modalInfoUserPosition
+    {
+        margin-left: 12px;
+        padding-left: 5px;
+        box-sizing: border-box;
+    }
+}
